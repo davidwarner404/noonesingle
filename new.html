@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>No One Single</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/connection.png">
+
+
+</head>
+
+<body>
+    <header>
+        <h1 style="display: flex; flex-direction: row; align-items: center;"><img src="assets/connection.png" alt="" style="height:50px; width:70px; margin-left: 10px;"> No One Single</h1>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navItems">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#form">Join Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="assets/flirty women in bikini posing for camera_preview.mp4" type="video/mp4">
+        </video>
+        <div>
+            <h2>Connecting People, Building Community</h2>
+            <p>Join the best platform to meet new friends and grow your network.</p>
+            <a href="#">Join Us</a>
+        </div>
+    </section>
+
+
+    <div id="cookieConsentBanner"
+        style="display:none; position:fixed; bottom:0; left:0; width:100%; flex-direction: row; justify-content: space-between;  background-color:rgba(0, 0, 0, 0.8); color:white; padding:20px; z-index:9999; flex-wrap: wrap;">
+        <div>
+            <p>Welcome to No One Single. We ask for your consent to use your personal data for personalised advertising,
+                content, and services development. By continuing, you agree to our <a href="privacy-policy.html"
+                    target="_blank" style="color:#f0f0f0; text-decoration:underline;">Privacy Policy</a>.
+            </p>
+        </div>
+        <div style="display: inline-block; margin-left: auto; margin: auto;">
+            <button id="acceptCookies"
+                style="background-color:green; color:white; border:none; padding:10px 20px; cursor:pointer;  margin-bottom: 10px; margin-right: 20px; margin-top: 10px; width: 200px; ">Accept
+                All</button>
+            <button id="manageCookies"
+                style="background-color:orange; color:white; border:none; padding:10px 20px; cursor:pointer; width: 200px;">Manage
+                Options</button>
+        </div>
+    </div>
+
+    <!-- Manage Cookies Modal -->
+    <div id="manageCookiesModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:10000; justify-content:center; align-items:center;">
+        <div style="background-color:white; padding:20px; max-width:600px; width:100%; text-align:center;">
+            <h2>Manage Cookie Preferences</h2>
+            <p>Choose how your data is used on this site.</p>
+            <div>
+                <input type="checkbox" id="personalisedAds" checked> <label for="personalisedAds">Personalised
+                    Advertising</label><br>
+                <input type="checkbox" id="contentMeasurement" checked> <label for="contentMeasurement">Content
+                    Measurement & Development</label><br>
+                <input type="checkbox" id="audienceResearch" checked> <label for="audienceResearch">Audience
+                    Research</label><br>
+            </div>
+            <button id="savePreferences"
+                style="background-color:green; color:white; border:none; padding:10px 20px; cursor:pointer;">Save
+                Preferences</button>
+            <button id="closeManageModal"
+                style="background-color:red; color:white; border:none; padding:10px 20px; cursor:pointer;">Close</button>
+        </div>
+    </div>
+
+
+    <div class="offerpromo">
+        <div class="first" style="overflow: hidden;">
+
+            <img src="https://img.freepik.com/premium-photo/woman-red-bikini-is-holding-glass-cocktail_1244866-243.jpg?w=360"
+                alt="">
+            <div class="view">
+                <a href="">Learn More</a>
+            </div>
+
+        </div>
+        <div class="slider" style=" margin: auto; padding: 0;">
+
+            <div class="slider-container">
+                <div class="slider-card" style="padding: 0;">
+                    <div class="midtop">
+                        <h1>heading</h1>
+                    </div>
+                    <video autoplay muted loop>
+
+                        <source src="assets/screen-capture.webm" type="video/mp4">
+                    </video>
+                    <div class="midbottom">
+                        
+                    </div>
+                </div>
+
+                <div class="slider-card" style="padding: 0;">
+                    <div class="midtop">
+                        <h1>heading</h1>
+                    </div>
+                    <video autoplay muted loop>
+                        <source src="assets/screen-capture.webm" type="video/mp4">
+                    </video>
+                    <div class="midbottom">
+                        
+                    </div>
+
+                </div>
+                <div class="slider-card" style="padding: 0;">
+                    <div class="midtop">
+                        <h1>heading</h1>
+                    </div>
+                    <video autoplay muted loop>
+                        <source src="assets/screen-capture.webm" type="video/mp4">
+                    </video>
+                    <div class="midbottom">
+                        
+                    </div>
+                </div>
+
+            </div>
+            <button class="prev">←</button>
+            <button class="next">→</button>
+
+        </div>
+        <div class="last" >
+            <img src="https://img.freepik.com/premium-photo/young-woman-wearing-red-towel-pink-bikini-walking-water-edge-beach_137125-1896.jpg?w=360"
+                alt="" >
+            <div class="view">
+                <a href="">Learn More</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <img src="https://img.freepik.com/premium-photo/attractive-woman-swimsuit-lying-down_13339-34758.jpg?w=740"
+            alt="">
+
+    </div>
+
+    <div class="form-section" id="form">
+        <h2>Join Us Today!</h2>
+        <p>Be part of a community that values connection and casual interactions.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+
+            <button type="submit">Join Us</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 No One Single. All rights reserved. | <a href="#contact">Contact Us</a></p>
+        <a href="javascript:void(0)"
+            onclick="document.getElementById('manageCookiesModal').style.display='flex';">Manage Cookies</a>
+
+    </footer>
+
+
+    <script>
+        function toggleNav() {
+            const navItems = document.getElementById("navItems");
+            navItems.classList.toggle("show");
+        }
+
+        // Close the mobile nav when clicking outside
+        window.onclick = function (event) {
+            if (!event.target.matches('.hamburger') && !event.target.matches('.hamburger div')) {
+                const navItems = document.getElementById("navItems");
+                if (navItems.classList.contains('show')) {
+                    navItems.classList.remove('show');
+                }
+            }
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            // Slider variables
+            const sliderContainer = document.querySelector('.slider-container');
+            const slides = document.querySelectorAll('.slider-card');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            const slideWidth = slides[0].clientWidth;
+
+            // Function to move slider
+            function updateSliderPosition() {
+                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            // Next button
+            nextBtn.onclick = function () {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSliderPosition();
+            };
+
+            // Previous button
+            prevBtn.onclick = function () {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSliderPosition();
+            };
+
+            // Auto-rotate slides every 3 seconds
+            let autoRotate = setInterval(function () {
+                nextBtn.onclick();
+            }, 3000);
+
+            // Pause auto-rotation on hover
+            sliderContainer.addEventListener('mouseover', function () {
+                clearInterval(autoRotate);
+            });
+
+            // Resume auto-rotation when not hovering
+            sliderContainer.addEventListener('mouseout', function () {
+                autoRotate = setInterval(function () {
+                    nextBtn.onclick();
+                }, 3000);
+            });
+        };
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

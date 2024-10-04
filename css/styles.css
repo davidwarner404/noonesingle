@@ -1,0 +1,692 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    line-height: 1.6;
+    background-color: #F8F9FA;
+    color: #333;
+    padding: 0;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #6f00124b, #ffdde350);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+header h1 {
+    margin-right: auto;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #d15757;
+}
+
+/* Underline effect on hover */
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #d15757;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section with Video Background */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease;
+}
+
+.hero a {
+    background-color: #F37272;
+    padding: 15px 30px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: #d15757;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2C3E50;
+}
+
+.section p {
+    font-size: 1rem;
+    color: #666;
+    width: 80%;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+
+/* Promotional Ad Space */
+.ad-space {
+    
+    
+
+    color: #ecf0f1;
+    text-align: center;
+    height: 400px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.ad-space img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    
+}
+
+
+
+/* Form Section */
+.form-section {
+    background: linear-gradient(360deg, #cf8d8d, #ec6969);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.form-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.form-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-section input {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.form-section input:focus {
+    border: 2px solid #27AE60;
+}
+
+.form-section button {
+    padding: 12px 30px;
+    background-color: #27AE60;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-section button:hover {
+    background-color: #229954;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    padding: 20px;
+    color: #ecf0f1;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #F39C12;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #D35400;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-content input {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+
+    transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+    border: 2px solid #27AE60;
+}
+
+.modal-content button {
+    padding: 2%;
+    background-color: #27AE60;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-items: center;
+}
+
+.modal-content button:hover {
+    background-color: #229954;
+    transform: translateY(-3px);
+}
+
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin-bottom: 30px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+}
+
+/* Add animation to modal */
+.modal-show {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slider styling */
+.offerpromo {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+
+}
+
+.first {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+.first img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.view {
+    position: absolute;
+    top: 90%;
+    left: 25%;
+
+
+}
+
+.view a {
+    text-decoration: none;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10%;
+    text-wrap: nowrap;
+    border: 2px solid #ccc;
+
+}
+
+
+
+.last {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+.last img{
+    object-position: bottom;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.last .view {
+    position: absolute;
+    top: 90%;
+
+}
+
+.last .view .a {
+    text-decoration: none;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10%;
+    text-wrap: nowrap;
+    border: 2px solid #ccc;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    height: 100%;
+
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.9s ease;
+    height: 100%;
+
+
+}
+
+.slider-card {
+    flex: 1 0 100%;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.slider-card video {
+    width: 100%;
+    height: 60%;
+}
+
+.midtop {
+    background-color: black;
+   height: 20%;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   font-size: 40px;
+
+}
+
+.midbottom {
+    background-color: black;
+   height: 20%;
+
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d15757;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+
+}
+
+
+.next {
+    right: 10px;
+}
+
+/* Optional: Add hover effects for buttons */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        background: #880014;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        transition: max-height 0.3s ease;
+        z-index: 100;
+        height: 100vh;
+        align-items: center;
+    }
+
+    nav ul.show {
+        display: flex;
+        height: 100vh;
+    }
+
+    .hamburger {
+        display: flex;
+
+    }
+
+    nav ul li a:hover {
+        color: #6F0012;
+    }
+
+    /* Underline effect on hover */
+    nav ul li a::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #6F0012;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s ease;
+    }
+
+    .offerpromo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+       height: 100%;
+    }
+
+    .first {
+        width: 100%;
+        height: 5%;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    .first img {
+        object-fit: cover;
+        object-position: center;
+        margin: auto;
+        width: 100%;
+        
+
+    }
+
+    .first .view {
+        position: absolute;
+        top: 80%;
+        left: 35%;
+
+    }
+
+    .slider{
+        width: 100%;
+        height: 60%;
+        
+        
+
+    }
+    .slider-container{
+        height: 400px;
+        width: 100%;
+
+        
+    }
+    .slider-card{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+    }
+    .midtop{
+        font-size: 25px;
+        height: 20%;
+    }
+    .last{
+        width: 100%;
+        height: 5%;
+        position: relative;
+       
+    }
+    .last img {
+        object-fit: cover;
+        object-position: center;
+        margin: auto;
+        width: 100%;
+        
+
+    }
+    
+    .last .view {
+        position: absolute;
+        top: 80%;
+        left: 35%;
+
+    }
+    .ad-space{
+        width: 100%;
+        height: 200px;
+    }
+    .ad-space img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        
+      
+    }
+    header{
+        padding: 10px;
+    }
+    header h1{
+        font-size: 1.5rem;
+    }
+
+    header h1 img{
+        margin-left: 0;
+    }
+
+    
+}
