@@ -74,8 +74,10 @@
                 <input type="checkbox" id="audienceResearch" checked> <label for="audienceResearch">Audience
                     Research</label><br>
             </div>
-            <button id="savePreferences">Save Preferences</button>
+            <div class="but">
+                <button id="savePreferences">Save Preferences</button>
             <button id="closeManageModal" class="close">Close</button>
+            </div>
         </div>
     </div>
 
@@ -151,8 +153,8 @@
                 </div>
 
             </div>
-            <button class="prev">←</button>
-            <button class="next">→</button>
+            <button class="prev"><</button>
+            <button class="next">></button>
 
         </div>
         <div class="last" style="overflow: hidden;">
@@ -164,22 +166,64 @@
         </div>
     </div>
 
-    <div class="ad-space">
-        <img src="assets/image_2024_10_04T07_32_03_210Z.png" alt="">
-
-    </div>
+    
 
     <div class="form-section" id="form">
-        <h2>Join Us Today!</h2>
+        <h2>Are You Single?</h2>
         <p>Be part of a community that values connection and casual interactions.</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-
-            <button type="submit">Join Us</button>
+        <form id="multiStepForm" style="margin-top: 20px;">
+            <!-- Step 1: Select Gender -->
+            <div class="form-step active">
+                <h3>I am a:</h3>
+                <div class="gender-options">
+                    <button type="button" class="gender-btn" data-value="male">Men</button>
+                    <button type="button" class="gender-btn" data-value="female">Women</button>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+            </div>
+    
+            <!-- Step 2: Name -->
+            <div class="form-step">
+                <h3>What’s your name?</h3>
+                <input type="text" placeholder="Your Name" required>
+                <div class="button-container">
+                    <button type="button" class="prev-btn">Previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+            </div>
+    
+            <!-- Step 3: Date of Birth -->
+            <div class="form-step">
+                <h3>Choose your date of birth</h3>
+                <input type="date" required>
+                <div class="button-container">
+                    <button type="button" class="prev-btn">Previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+            </div>
+    
+            <!-- Step 4: Email -->
+            <div class="form-step">
+                <h3>Enter Your Email</h3>
+                <input type="email" placeholder="Your Email" required>
+                <div class="button-container">
+                    <button type="button" class="prev-btn">Previous</button>
+                    <button type="button" class="submit-btn">Submit</button>
+                </div>
+            </div>
+    
+            <!-- Step 5: Confirmation -->
+            <div class="form-step">
+                <h3>Thank you for joining!</h3>
+                <p>Your information has been successfully submitted.</p>
+                <div class="button-container">
+                    <button type="button" class="prev-btn">Previous</button>
+                </div>
+            </div>
         </form>
     </div>
-
     <footer>
         <p>&copy; 2024 No One Single. All rights reserved. | <a href="#contact">Contact Us</a></p>
         <a href="javascript:void(0)"
@@ -203,9 +247,52 @@
                 }
             }
         }
+        const formSteps = document.querySelectorAll('.form-step');
+    const nextBtns = document.querySelectorAll('.next-btn');
+    const prevBtns = document.querySelectorAll('.prev-btn');
+    const submitBtn = document.querySelector('.submit-btn');
+
+    let currentStep = 0;
+
+    // Function to show the current step
+    function showStep(step) {
+        formSteps.forEach((formStep, index) => {
+            formStep.classList.toggle('active', index === step);
+        });
+    }
+
+    // Handle next button clicks
+    nextBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (currentStep < formSteps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    // Handle previous button clicks
+    prevBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    // Handle the submit button click
+    submitBtn.addEventListener('click', () => {
+        // You can handle form submission here
+        alert('Form submitted successfully!');
+    });
+
+    // Initialize the first step
+    showStep(currentStep);
     </script>
     
     <script>
+
 document.addEventListener('DOMContentLoaded', () => {
         const cookieConsentBanner = document.getElementById('cookieConsentBanner');
         const manageCookiesModal = document.getElementById('manageCookiesModal');

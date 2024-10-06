@@ -184,55 +184,50 @@ nav ul li a:hover::after {
 }
 
 
-/* Promotional Ad Space */
-.ad-space {
-    
-    
-
-    color: #ecf0f1;
-    text-align: center;
-    height: 400px;
-    overflow: hidden;
-
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.ad-space img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    
-}
 
 
 
-/* Form Section */
+
 .form-section {
-    background: linear-gradient(360deg, #cf8d8d, #ec6969);
+    background: linear-gradient(360deg, rgba(207, 141, 141, 0.288), rgba(236, 105, 105, 0.8)), url('/assets/image_2024_10_04T07_32_03_210Z.png');
+    background-size: 100%;
+    
+    background-position: bottom;
     color: white;
     padding: 60px 0;
     text-align: center;
 }
 
-.form-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.form-step {
+    display: none;
 }
 
-.form-section p {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
+.form-step.active {
+    display: block;
 }
 
-.form-section form {
+.gender-options {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.form-section input {
+.gender-btn {
+    background-color: #27AE60;
+    color: white;
+    border: none;
     padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gender-btn:hover {
+    background-color: #229954;
+}
+
+input {
+    padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     border: none;
@@ -241,26 +236,26 @@ nav ul li a:hover::after {
     transition: all 0.3s ease;
 }
 
-.form-section input:focus {
+input:focus {
     border: 2px solid #27AE60;
 }
 
-.form-section button {
+button {
     padding: 12px 30px;
     background-color: #27AE60;
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
 }
 
-.form-section button:hover {
+button:hover {
     background-color: #229954;
     transform: translateY(-3px);
 }
-
 /* Footer */
 footer {
     background-color: black;
@@ -692,17 +687,7 @@ width: 100%;
         left: 35%;
 
     }
-    .ad-space{
-        width: 100%;
-        height: 200px;
-    }
-    .ad-space img{
-        width: 100%;
-        height: 100%;
-        
-        
-      
-    }
+    
     header{
         padding: 10px;
     }
@@ -712,6 +697,15 @@ width: 100%;
 
     header h1 img{
         margin-left: 0;
+    }
+
+    .form-section {
+        background: linear-gradient(360deg, rgba(207, 141, 141, 0.288), rgba(236, 105, 105, 0.8)), url('/assets/image_2024_10_04T07_32_03_210Z.png');
+       background-size: 90%;
+        background-position: bottom;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
     }
 
     
