@@ -13,12 +13,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
 </head>
 
 <body>
     <header>
-        <h1 style="display: flex; flex-direction: row; align-items: center;"><img src="assets/connection.png" alt="" style="height:50px; width:70px; margin-left: 10px;"> No One Single</h1>
+        <h1 style="display: flex; flex-direction: row; align-items: center;"><img src="assets/connection.png" alt=""
+                style="height:50px; width:70px; margin-left: 10px;"> No One Single</h1>
         <div class="hamburger" onclick="toggleNav()">
             <div></div>
             <div></div>
@@ -29,7 +30,7 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#form">Join Us</a></li>
-                
+
             </ul>
         </nav>
     </header>
@@ -91,8 +92,7 @@
     <div class="offerpromo">
         <div class="first" style="overflow: hidden;">
 
-            <img src="assets/image_2024_10_04T07_32_18_436Z.png"
-                alt="">
+            <img src="assets/image_2024_10_04T07_32_18_436Z.png" alt="">
             <div class="view">
                 <a href="">Learn More</a>
             </div>
@@ -106,13 +106,28 @@
                         <img src="https://www.singlecolombian.com/qa/register01/images/logo.png" alt="">
                     </div>
                     <a href="https://www.singlecolombian.com/qa/register01.php" target="_blank">
-                    <video autoplay muted loop>
+                        <video autoplay muted loop>
 
-                        <source src="assets/screen-capture (1).webm" type="video/mp4">
-                    </video>
-                </a>
+                            <source src="assets/screen-capture (1).webm" type="video/mp4">
+                        </video>
+                    </a>
                     <div class="midbottom">
-                        
+
+                    </div>
+                </div>
+
+                <div class="slider-card" style="padding: 0;">
+                    <div class="midtop">
+                        <img src="https://www.singlecolombian.com/qa/register01/images/logo.png" alt="">
+                    </div>
+                    <a href="https://www.singlecolombian.com/qa/register01.php" target="_blank">
+                        <video autoplay muted loop>
+
+                            <source src="assets/screen-capture (2).webm" type="video/mp4">
+                        </video>
+                    </a>
+                    <div class="midbottom">
+
                     </div>
                 </div>
 
@@ -120,13 +135,13 @@
                     <div class="midtop">
                         <img src="https://www.findrussiabrides.com/qa/register01/images/logo.png" alt="">
                     </div>
-                   <a href="https://www.findrussiabrides.com/qa/register01.php" target="_blank">
-                    <video autoplay muted loop>
-                        <source src="assets/screen-capture (4).webm" type="video/mp4">
-                    </video>
-                   </a>
+                    <a href="https://www.findrussiabrides.com/qa/register01.php" target="_blank">
+                        <video autoplay muted loop>
+                            <source src="assets/screen-capture (4).webm" type="video/mp4">
+                        </video>
+                    </a>
                     <div class="midbottom">
-                        
+
                     </div>
 
                 </div>
@@ -134,12 +149,13 @@
                     <div class="midtop">
                         <img src="https://www.meetlatinwoman.com/qa/register01/images/logo.png" alt="">
                     </div>
-                    <a href="https://www.meetlatinwoman.com/qa/register01.php" target="_blank"><video autoplay muted loop>
-                        <source src="assets/screen-capture (3).webm" type="video/mp4">
-                    </video></a>
-                    
+                    <a href="https://www.meetlatinwoman.com/qa/register01.php" target="_blank"><video autoplay muted
+                            loop>
+                            <source src="assets/screen-capture (3).webm" type="video/mp4">
+                        </video></a>
+
                     <div class="midbottom">
-                        
+
                     </div>
                 </div>
 
@@ -149,8 +165,7 @@
 
         </div>
         <div class="last" style="overflow: hidden;">
-            <img src="assets/image_2024_10_04T07_32_26_688Z.png"
-                alt="" >
+            <img src="assets/image_2024_10_04T07_32_26_688Z.png" alt="">
             <div class="view">
                 <a href="">Learn More</a>
             </div>
@@ -159,8 +174,7 @@
     </div>
 
     <div class="ad-space">
-        <img src="assets/image_2024_10_04T07_32_03_210Z.png"
-            alt="">
+        <img src="assets/image_2024_10_04T07_32_03_210Z.png" alt="">
 
     </div>
 
@@ -199,59 +213,123 @@
             }
         }
     </script>
+    
     <script>
         window.onload = function () {
-           
-        };
-    </script>
-    <script>
-        window.onload = function () {
-             // Slider variables
-             const sliderContainer = document.querySelector('.slider-container');
-            const slides = document.querySelectorAll('.slider-card');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            let currentIndex = 0;
-            const totalSlides = slides.length;
-            const slideWidth = slides[0].clientWidth;
+            // Slider variables
+            const sliderContainer = document.querySelector('.slider-container');
+const slides = document.querySelectorAll('.slider-card');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+const totalSlides = slides.length;
 
-            // Function to move slider
-            function updateSliderPosition() {
-                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
+// Variables for touch detection
+let startX;
+let endX;
 
-            // Next button
-            nextBtn.onclick = function () {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSliderPosition();
-            };
+// Function to move slider with complex animation effect
+function updateSliderPosition() {
+    gsap.to(sliderContainer, {
+        x: -currentIndex * 100 + '%',
+        duration: 0.5,
+        ease: "power2.out"
+    });
+}
 
-            // Previous button
-            prevBtn.onclick = function () {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateSliderPosition();
-            };
+// Next button click handler
+nextBtn.onclick = function () {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSliderPosition();
+};
 
-            // Auto-rotate slides every 3 seconds
-            let autoRotate = setInterval(function () {
-                nextBtn.onclick();
-            }, 4000);
+// Previous button click handler
+prevBtn.onclick = function () {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSliderPosition();
+};
 
-            // Pause auto-rotation on hover
-            sliderContainer.addEventListener('mouseover', function () {
-                clearInterval(autoRotate);
-            });
+// Touch event handlers
+sliderContainer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
 
-            // Resume auto-rotation when not hovering
-            sliderContainer.addEventListener('mouseout', function () {
-                autoRotate = setInterval(function () {
-                    nextBtn.onclick();
-                }, 4000);
-            });
+sliderContainer.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+});
+
+sliderContainer.addEventListener('touchend', () => {
+    if (startX > endX + 50) {
+        // Swipe left
+        nextBtn.onclick();
+    } else if (startX < endX - 50) {
+        // Swipe right
+        prevBtn.onclick();
+    }
+});
+
+// Auto-rotate slides every 4 seconds
+let autoRotate = setInterval(function () {
+    nextBtn.onclick();
+}, 4000);
+
+// Pause auto-rotation on hover
+sliderContainer.addEventListener('mouseover', function () {
+    clearInterval(autoRotate);
+});
+
+// Resume auto-rotation when not hovering
+sliderContainer.addEventListener('mouseout', function () {
+    autoRotate = setInterval(function () {
+        nextBtn.onclick();
+    }, 4000);
+});
+
+// GSAP Animation for prev/next buttons
+const buttonAnimation = (button) => {
+    gsap.fromTo(button, 
+        { scale: 1 },
+        {
+            scale: 1.2,
+            duration: 0.2,
+            ease: "power2.inOut",
+            repeat: -1,
+            yoyo: true,
+            paused: true
+        }
+    );
+};
+
+buttonAnimation(prevBtn);
+buttonAnimation(nextBtn);
+
+// Trigger hover effect on buttons
+prevBtn.addEventListener('mouseenter', () => {
+    gsap.to(prevBtn, { scale: 1.2, duration: 0.2 });
+});
+prevBtn.addEventListener('mouseleave', () => {
+    gsap.to(prevBtn, { scale: 1, duration: 0.2 });
+});
+
+nextBtn.addEventListener('mouseenter', () => {
+    gsap.to(nextBtn, { scale: 1.2, duration: 0.2 });
+});
+nextBtn.addEventListener('mouseleave', () => {
+    gsap.to(nextBtn, { scale: 1, duration: 0.2 });
+});
+
+// Optional: Add fade-in effect for the slider on load
+gsap.from(sliderContainer, {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    ease: "power2.out"
+});
+
 
             // Initialize GSAP ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
-    
+
             // Pin the offerpromo section and animate the first and last images on scroll
             gsap.timeline({
                 scrollTrigger: {
@@ -263,8 +341,8 @@
                     markers: true,  // For debugging, shows start/end points (can be removed later)
                 }
             })
-            .fromTo(".first img", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })
-            .to(".first img", { x: "100%", opacity: 0, duration: 1 })
+                .fromTo(".first img", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })
+                .to(".first img", { x: "100%", opacity: 0, duration: 1 })
 
             gsap.timeline({
                 scrollTrigger: {
@@ -278,14 +356,14 @@
             })
 
 
-            
-          
-            .fromTo(".last img", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 }) // '<' makes it happen simultaneously
-           
-            .to(".last img", { x: "-100%", opacity: 0, duration: 1 })
+
+
+                .fromTo(".last img", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 }) // '<' makes it happen simultaneously
+
+                .to(".last img", { x: "-100%", opacity: 0, duration: 1 })
         };
     </script>
-    
+
 
 
 
