@@ -338,7 +338,7 @@ gsap.from(sliderContainer, {
                     scrub: true,  // Smooth scrolling based animation
                     start: "top bottom",  // Start when the section hits the top
                     end: "+=200%",  // End when scrolled past 200% of the viewport
-                    markers: true,  // For debugging, shows start/end points (can be removed later)
+                    markers: false,  // For debugging, shows start/end points (can be removed later)
                 }
             })
                 .fromTo(".first img", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })
@@ -351,7 +351,7 @@ gsap.from(sliderContainer, {
                     scrub: true,  // Smooth scrolling based animation
                     start: "top bottom",  // Start when the section hits the top
                     end: "+=200%",  // End when scrolled past 200% of the viewport
-                    markers: true,  // For debugging, shows start/end points (can be removed later)
+                    markers: false,  // For debugging, shows start/end points (can be removed later)
                 }
             })
 
