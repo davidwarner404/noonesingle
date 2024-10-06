@@ -543,26 +543,33 @@ width: 100%;
     color: white;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 24px;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 .prev {
-    left: 10px;
-
+    left: 10px; /* Position to the left */
 }
-
 
 .next {
-    right: 10px;
+    right: 10px; /* Position to the right */
 }
 
-/* Optional: Add hover effects for buttons */
+/* Hover effects for buttons */
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
+/* Optional: Active state for buttons */
+.prev:active,
+.next:active {
+    transform: scale(0.9); /* Slightly shrink when pressed */
+}
 
 
 

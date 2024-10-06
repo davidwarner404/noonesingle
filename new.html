@@ -224,11 +224,7 @@ const nextBtn = document.querySelector('.next');
 let currentIndex = 0;
 const totalSlides = slides.length;
 
-// Variables for touch detection
-let startX;
-let endX;
-
-// Function to move slider with complex animation effect
+// Function to move slider with GSAP animation
 function updateSliderPosition() {
     gsap.to(sliderContainer, {
         x: -currentIndex * 100 + '%',
@@ -249,7 +245,7 @@ prevBtn.onclick = function () {
     updateSliderPosition();
 };
 
-// Touch event handlers
+// Touch event handlers for mobile swipe effect
 sliderContainer.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
 });
@@ -260,10 +256,8 @@ sliderContainer.addEventListener('touchmove', (e) => {
 
 sliderContainer.addEventListener('touchend', () => {
     if (startX > endX + 50) {
-        // Swipe left
         nextBtn.onclick();
     } else if (startX < endX - 50) {
-        // Swipe right
         prevBtn.onclick();
     }
 });
@@ -285,40 +279,20 @@ sliderContainer.addEventListener('mouseout', function () {
     }, 4000);
 });
 
-// GSAP Animation for prev/next buttons
-const buttonAnimation = (button) => {
-    gsap.fromTo(button, 
-        { scale: 1 },
-        {
-            scale: 1.2,
-            duration: 0.2,
-            ease: "power2.inOut",
-            repeat: -1,
-            yoyo: true,
-            paused: true
-        }
-    );
+// GSAP hover effects for buttons
+const buttonHoverAnimation = (button) => {
+    button.addEventListener('mouseenter', () => {
+        gsap.to(button, { scale: 1.1, duration: 0.2 });
+    });
+    button.addEventListener('mouseleave', () => {
+        gsap.to(button, { scale: 1, duration: 0.2 });
+    });
 };
 
-buttonAnimation(prevBtn);
-buttonAnimation(nextBtn);
+buttonHoverAnimation(prevBtn);
+buttonHoverAnimation(nextBtn);
 
-// Trigger hover effect on buttons
-prevBtn.addEventListener('mouseenter', () => {
-    gsap.to(prevBtn, { scale: 1.2, duration: 0.2 });
-});
-prevBtn.addEventListener('mouseleave', () => {
-    gsap.to(prevBtn, { scale: 1, duration: 0.2 });
-});
-
-nextBtn.addEventListener('mouseenter', () => {
-    gsap.to(nextBtn, { scale: 1.2, duration: 0.2 });
-});
-nextBtn.addEventListener('mouseleave', () => {
-    gsap.to(nextBtn, { scale: 1, duration: 0.2 });
-});
-
-// Optional: Add fade-in effect for the slider on load
+// Optional: Fade-in effect for the slider on load
 gsap.from(sliderContainer, {
     opacity: 0,
     duration: 1,
@@ -337,12 +311,12 @@ gsap.from(sliderContainer, {
                     pin: false,  // Pins the section in place
                     scrub: true,  // Smooth scrolling based animation
                     start: "top bottom",  // Start when the section hits the top
-                    end: "+=200%",  // End when scrolled past 200% of the viewport
+                    end: "+=100%",  // End when scrolled past 200% of the viewport
                     markers: false,  // For debugging, shows start/end points (can be removed later)
                 }
             })
                 .fromTo(".first img", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })
-                .to(".first img", { x: "100%", opacity: 0, duration: 1 })
+                // .to(".first img", { x: "100%", opacity: 0, duration: 1 })
 
             gsap.timeline({
                 scrollTrigger: {
@@ -350,7 +324,7 @@ gsap.from(sliderContainer, {
                     pin: false,  // Pins the section in place
                     scrub: true,  // Smooth scrolling based animation
                     start: "top bottom",  // Start when the section hits the top
-                    end: "+=200%",  // End when scrolled past 200% of the viewport
+                    end: "+=100%",  // End when scrolled past 200% of the viewport
                     markers: false,  // For debugging, shows start/end points (can be removed later)
                 }
             })
@@ -360,7 +334,7 @@ gsap.from(sliderContainer, {
 
                 .fromTo(".last img", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 }) // '<' makes it happen simultaneously
 
-                .to(".last img", { x: "-100%", opacity: 0, duration: 1 })
+                // .to(".last img", { x: "-100%", opacity: 0, duration: 1 })
         };
     </script>
 
