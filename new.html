@@ -148,7 +148,7 @@
             <button class="next">→</button>
 
         </div>
-        <div class="last" >
+        <div class="last" style="overflow: hidden;">
             <img src="assets/image_2024_10_04T07_32_26_688Z.png"
                 alt="" >
             <div class="view">
@@ -201,8 +201,13 @@
     </script>
     <script>
         window.onload = function () {
-            // Slider variables
-            const sliderContainer = document.querySelector('.slider-container');
+           
+        };
+    </script>
+    <script>
+        window.onload = function () {
+             // Slider variables
+             const sliderContainer = document.querySelector('.slider-container');
             const slides = document.querySelectorAll('.slider-card');
             const prevBtn = document.querySelector('.prev');
             const nextBtn = document.querySelector('.next');
@@ -243,10 +248,7 @@
                     nextBtn.onclick();
                 }, 4000);
             });
-        };
-    </script>
-    <script>
-        window.onload = function () {
+
             // Initialize GSAP ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
     
@@ -256,16 +258,31 @@
                     trigger: ".first",
                     pin: false,  // Pins the section in place
                     scrub: true,  // Smooth scrolling based animation
-                    start: "top top",  // Start when the section hits the top
+                    start: "top bottom",  // Start when the section hits the top
                     end: "+=200%",  // End when scrolled past 200% of the viewport
-                    markers: false,  // For debugging, shows start/end points (can be removed later)
+                    markers: true,  // For debugging, shows start/end points (can be removed later)
                 }
             })
-            
             .fromTo(".first img", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })
-            .fromTo(".last img", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })  // '<' makes it happen simultaneously
             .to(".first img", { x: "100%", opacity: 0, duration: 1 })
-            .to(".last img", { x: "-100%", opacity: 0, duration: 1 }, "<");
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".last",
+                    pin: false,  // Pins the section in place
+                    scrub: true,  // Smooth scrolling based animation
+                    start: "top bottom",  // Start when the section hits the top
+                    end: "+=200%",  // End when scrolled past 200% of the viewport
+                    markers: true,  // For debugging, shows start/end points (can be removed later)
+                }
+            })
+
+
+            
+          
+            .fromTo(".last img", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 }) // '<' makes it happen simultaneously
+           
+            .to(".last img", { x: "-100%", opacity: 0, duration: 1 })
         };
     </script>
     
