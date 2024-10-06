@@ -48,28 +48,22 @@
     </section>
 
 
-    <div id="cookieConsentBanner"
-        style="display:none; position:fixed; bottom:0; left:0; width:100%; flex-direction: row; justify-content: space-between;  background-color:rgba(0, 0, 0, 0.8); color:white; padding:20px; z-index:9999; flex-wrap: wrap;">
+    <div id="cookieConsentBanner">
         <div>
             <p>Welcome to No One Single. We ask for your consent to use your personal data for personalised advertising,
                 content, and services development. By continuing, you agree to our <a href="privacy-policy.html"
-                    target="_blank" style="color:#f0f0f0; text-decoration:underline;">Privacy Policy</a>.
+                target="_blank" style="color:#f0f0f0; text-decoration:underline;">Privacy Policy</a>.
             </p>
         </div>
         <div style="display: inline-block; margin-left: auto; margin: auto;">
-            <button id="acceptCookies"
-                style="background-color:green; color:white; border:none; padding:10px 20px; cursor:pointer;  margin-bottom: 10px; margin-right: 20px; margin-top: 10px; width: 200px; ">Accept
-                All</button>
-            <button id="manageCookies"
-                style="background-color:orange; color:white; border:none; padding:10px 20px; cursor:pointer; width: 200px;">Manage
-                Options</button>
+            <button id="acceptCookies">Accept All</button>
+            <button id="manageCookies" class="orange">Manage Options</button>
         </div>
     </div>
-
+    
     <!-- Manage Cookies Modal -->
-    <div id="manageCookiesModal"
-        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:10000; justify-content:center; align-items:center;">
-        <div style="background-color:white; padding:20px; max-width:600px; width:100%; text-align:center;">
+    <div id="manageCookiesModal">
+        <div class="modal-content">
             <h2>Manage Cookie Preferences</h2>
             <p>Choose how your data is used on this site.</p>
             <div>
@@ -80,11 +74,8 @@
                 <input type="checkbox" id="audienceResearch" checked> <label for="audienceResearch">Audience
                     Research</label><br>
             </div>
-            <button id="savePreferences"
-                style="background-color:green; color:white; border:none; padding:10px 20px; cursor:pointer;">Save
-                Preferences</button>
-            <button id="closeManageModal"
-                style="background-color:red; color:white; border:none; padding:10px 20px; cursor:pointer;">Close</button>
+            <button id="savePreferences">Save Preferences</button>
+            <button id="closeManageModal" class="close">Close</button>
         </div>
     </div>
 
@@ -215,6 +206,47 @@
     </script>
     
     <script>
+document.addEventListener('DOMContentLoaded', () => {
+        const cookieConsentBanner = document.getElementById('cookieConsentBanner');
+        const manageCookiesModal = document.getElementById('manageCookiesModal');
+
+        // Check if cookies have already been accepted
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+        if (!cookiesAccepted) {
+            cookieConsentBanner.style.display = 'flex'; // Show the cookie consent banner
+        }
+
+        // Accept cookies
+        document.getElementById('acceptCookies').onclick = function () {
+            localStorage.setItem('cookiesAccepted', 'true'); // Store acceptance in local storage
+            cookieConsentBanner.style.display = 'none'; // Hide banner
+        };
+
+        // Open manage cookies modal
+        document.getElementById('manageCookies').onclick = function () {
+            manageCookiesModal.style.display = 'flex'; // Show modal
+        };
+
+        // Save preferences and close modal
+        document.getElementById('savePreferences').onclick = function () {
+            const personalisedAds = document.getElementById('personalisedAds').checked;
+            const contentMeasurement = document.getElementById('contentMeasurement').checked;
+            const audienceResearch = document.getElementById('audienceResearch').checked;
+
+            // Store user preferences in local storage
+            localStorage.setItem('personalisedAds', personalisedAds);
+            localStorage.setItem('contentMeasurement', contentMeasurement);
+            localStorage.setItem('audienceResearch', audienceResearch);
+
+            manageCookiesModal.style.display = 'none'; // Hide modal
+        };
+
+        // Close modal
+        document.getElementById('closeManageModal').onclick = function () {
+            manageCookiesModal.style.display = 'none'; // Hide modal
+        };
+    });
+
         window.onload = function () {
             // Slider variables
             const sliderContainer = document.querySelector('.slider-container');
