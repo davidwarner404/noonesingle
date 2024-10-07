@@ -1,0 +1,33 @@
+[
+    {
+        "gender": "female",
+        "name": "dikshant",
+        "dob": "2001-10-06",
+        "email": "testdome404@gmail.com",
+        "ip_address": "127.0.0.1",
+        "location": {
+            "ip": "127.0.0.1",
+            "bogon": true
+        }
+    },
+    {
+        "gender": "female",
+        "name": "firebase",
+        "dob": "2001-10-24",
+        "email": "sidhartbhatiya@gmail.com",
+        "ip_address": "8.8.8.8",
+        "location": {
+            "ip": "8.8.8.8",
+            "hostname": "dns.google",
+            "anycast": true,
+            "city": "Mountain View",
+            "region": "California",
+            "country": "US",
+            "loc": "37.4056,-122.0775",
+            "org": "AS15169 Google LLC",
+            "postal": "94043",
+            "timezone": "America/Los_Angeles",
+            "readme": "https://ipinfo.io/missingauth"
+        }
+    }
+]
