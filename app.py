@@ -54,8 +54,9 @@ def submit_form():
     email = request.form.get('email')
 
     # Get user's IP address
-    user_ip = request.remote_addr or "8.8.8.8"  # Use default IP for testing if needed
-
+    response = requests.get('https://api.ipify.org?format=json')
+    user_ip = response.json()['ip']  # Use default IP for testing if needed
+    print(user_ip)
     # Fetch user's location based on IP address
     location_data = get_location(user_ip)
 
@@ -89,12 +90,14 @@ def subscribe_newsletter():
         return jsonify({'message': 'This email is already subscribed!'})
 
     # If no existing subscription, proceed with saving the new subscription
-    user_ip = request.remote_addr or "8.8.8.8"  # Use default IP for testing if needed
+    response = requests.get('https://api.ipify.org?format=json')
+    user_ip = response.json()['ip'] # Use default IP for testing if needed
     user_agent = request.user_agent.string  # Get user agent from the request
     timestamp = datetime.now().isoformat()  # Get the current timestamp
     referrer = request.referrer  # Get referrer URL, if available
 
     # Fetch user's location based on IP address
+    print(user_ip)
     location_data = get_location(user_ip)
 
     # Create a dictionary with the newsletter subscription data

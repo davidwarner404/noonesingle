@@ -88,7 +88,7 @@
         <div class="first" style="overflow: hidden;">
 
             <img src="static/assets/image_2024_10_04T07_32_18_436Z.png" alt="">
-            <div class="text-center-suggestion">
+            <div class="text-center-suggestion_1">
                 <h2>Explore New Horizons</h2>
             </div>
             <div class="view">
@@ -110,7 +110,9 @@
                         </video>
                     </a>
                     <div class="midbottom">
-
+                        <div style="text-align: center;">
+                            <a href="#" class="blinking-link">>>> Click Here <<<<</a>
+                        </div>
                     </div>
                 </div>
 
@@ -125,7 +127,9 @@
                         </video>
                     </a>
                     <div class="midbottom">
-
+                        <div>
+                            <a href="#" class="blinking-link">>>> Click Here <<<<</a>
+                        </div>
                     </div>
                 </div>
 
@@ -139,7 +143,9 @@
                         </video>
                     </a>
                     <div class="midbottom">
-
+                        <div>
+                            <a href="#" class="blinking-link">>>> Click Here <<<<</a>
+                        </div>
                     </div>
 
                 </div>
@@ -153,7 +159,9 @@
                         </video></a>
 
                     <div class="midbottom">
-
+                        <div>
+                            <a href="#" class="blinking-link">>>> Click Here <<<<</a>
+                        </div>
                     </div>
                 </div>
 
@@ -164,7 +172,7 @@
         </div>
         <div class="last" style="overflow: hidden;">
             <img src="static/assets/image_2024_10_04T07_32_26_688Z.png" alt="">
-            <div class="text-center-suggestion">
+            <div class="text-center-suggestion_2">
                 <h2>Stay Connected with Us</h2>
             </div>
             <div class="view">
@@ -174,72 +182,76 @@
         </div>
     </div>
 
+    <div class="form-container">
+        <div class="form-section" id="form">
+            <h1>Are You Single?</h1>
+            <p>Be part of a community that values connection and casual interactions.</p>
     
-
-    <div class="form-section" id="form">
-        <h1>Are You Single?</h1>
-        <p>Be part of a community that values connection and casual interactions.</p>
-        <form id="multiStepForm" action="/submit-form" method="POST" style="margin-top:30px;">
-            <!-- Step 1: Select Gender -->
-            <div class="form-step active">
-                <h3>I am a:</h3>
-                <div class="gender-options">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="gender" value="male" class="gender-checkbox" required >
-                        <span class="checkmark"></span><br>
-                        Men
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="gender" value="female" class="gender-checkbox" required>
-                        <span class="checkmark"></span><br>
-                        Women
-                    </label>
-                </div>
-                <div class="button-container">
-                    <button type="button" class="next-btn">Next</button>
-                </div>
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+                
             </div>
-        
-            <!-- Step 2: Name -->
-            <div class="form-step">
-                <h3>What’s your name?</h3>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <div class="button-container">
-                    <button type="button" class="prev-btn">Previous</button>
-                    <button type="button" class="next-btn">Next</button>
+    
+            <form id="multiStepForm" action="/submit-form" method="POST" style="margin-top:30px;">
+                <!-- Step 1: Select Gender -->
+                <div class="form-step active">
+                    <h3>I am a:</h3>
+                    <div class="gender-options">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="gender" value="male" class="gender-checkbox" required>
+                            <span class="checkmark"></span> Men
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="gender" value="female" class="gender-checkbox" required>
+                            <span class="checkmark"></span> Women
+                        </label>
+                    </div>
+                    <div class="button-container">
+                        <button type="button" class="next-btn">></button>
+                    </div>
                 </div>
-            </div>
-        
-            <!-- Step 3: Date of Birth -->
-            <div class="form-step">
-                <h3>Choose your date of birth</h3>
-                <input type="date" name="dob" required>
-                <div class="button-container">
-                    <button type="button" class="prev-btn">Previous</button>
-                    <button type="button" class="next-btn">Next</button>
+    
+                <!-- Step 2: Name -->
+                <div class="form-step">
+                    <h3>What’s your name?</h3>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <div class="button-container">
+                        <!-- <button type="button" class="prev-btn">Previous</button> -->
+                        <button type="button" class="next-btn">></button>
+                    </div>
                 </div>
-            </div>
-        
-            <!-- Step 4: Email -->
-            <div class="form-step">
-                <h3>Enter Your Email</h3>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <div class="button-container">
-                    <button type="button" class="prev-btn">Previous</button>
-                    <button type="submit" class="submit-btn">Submit</button>
+    
+                <!-- Step 3: Date of Birth -->
+                <div class="form-step">
+                    <h3>Choose your date of birth</h3>
+                    <input type="date" name="dob" required>
+                    <div class="button-container">
+                        <!-- <button type="button" class="prev-btn">Previous</button> -->
+                        <button type="button" class="next-btn">></button>
+                    </div>
                 </div>
-            </div>
-        
-            <!-- Step 5: Confirmation -->
-            <div class="form-step">
-                <h3>Thank you for joining!</h3>
-                <p>Your information has been successfully submitted.</p>
-                <div class="button-container">
-                    <button type="button" class="prev-btn">Previous</button>
+    
+                <!-- Step 4: Email -->
+                <div class="form-step">
+                    <h3>Enter Your Email</h3>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <div class="button-container">
+                        <!-- <button type="button" class="prev-btn">Previous</button> -->
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+    
+                
+                
+            </form>
+        </div>
     </div>
+
+    
     <footer>
         <p>&copy; 2024 No One Single. All rights reserved. | 
         <a href="javascript:void(0)" onclick="document.getElementById('manageCookiesModal').style.display='flex';">Manage Cookies</a>

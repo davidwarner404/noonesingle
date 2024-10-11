@@ -71,13 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtns = document.querySelectorAll('.next-btn');
     const prevBtns = document.querySelectorAll('.prev-btn');
     const submitBtn = document.querySelector('.submit-btn');
-
+    const stepIndicators = document.querySelectorAll(".step");
+    
     let currentStep = 0;
+
 
     // Function to show the current step
     function showStep(step) {
         formSteps.forEach((formStep, index) => {
             formStep.classList.toggle('active', index === step);
+        });
+        stepIndicators.forEach((stepIndicators, index) => {
+            stepIndicators.classList.toggle('active', index === step);
         });
     }
 
@@ -279,22 +284,22 @@ window.onload = function () {
         }
     });
 
-    // Auto-rotate slides every 4 seconds
-    let autoRotate = setInterval(function () {
-        nextBtn.onclick();
-    }, 4000);
+    // // Auto-rotate slides every 4 seconds
+    // let autoRotate = setInterval(function () {
+    //     nextBtn.onclick();
+    // }, 4000);
 
-    // Pause auto-rotation on hover
-    sliderContainer.addEventListener('mouseover', function () {
-        clearInterval(autoRotate);
-    });
+    // // Pause auto-rotation on hover
+    // sliderContainer.addEventListener('mouseover', function () {
+    //     clearInterval(autoRotate);
+    // });
 
-    // Resume auto-rotation when not hovering
-    sliderContainer.addEventListener('mouseout', function () {
-        autoRotate = setInterval(function () {
-            nextBtn.onclick();
-        }, 4000);
-    });
+    // // Resume auto-rotation when not hovering
+    // sliderContainer.addEventListener('mouseout', function () {
+    //     autoRotate = setInterval(function () {
+    //         nextBtn.onclick();
+    //     }, 4000);
+    // });
 
     // GSAP hover effects for buttons
     const buttonHoverAnimation = (button) => {
@@ -332,7 +337,7 @@ window.onload = function () {
             markers: false,  // For debugging, shows start/end points (can be removed later)
         }
     })
-        .fromTo(".first img", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 })
+        .fromTo(".first img", { y: "-100%", opacity: 0 }, { y: "0%", opacity: 1, duration: 1 })
     // .to(".first img", { x: "100%", opacity: 0, duration: 1 })
 
     gsap.timeline({
@@ -349,7 +354,7 @@ window.onload = function () {
 
 
 
-        .fromTo(".last img", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1 }) // '<' makes it happen simultaneously
+        .fromTo(".last img", { y: "-100%", opacity: 0 }, { y: "0%", opacity: 1, duration: 1 }) // '<' makes it happen simultaneously
 
     // .to(".last img", { x: "-100%", opacity: 0, duration: 1 })
 };
