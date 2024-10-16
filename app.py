@@ -31,6 +31,26 @@ def get_location(ip_address):
         print(f"Error fetching location: {e}")
         return None
 
+# Updated helper function to get client's IP address
+def get_client_ip():
+    try:
+        # First, try to get the IP from headers (for production environments)
+        ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+        if ip:
+            # If X-Forwarded-For contains multiple IP addresses, take the first one
+            ip = ip.split(',')[0].strip()
+        
+        # If the IP is a local address, fetch the public IP
+        if ip in ['127.0.0.1', 'localhost', '::1'] or ip.startswith('192.168.') or ip.startswith('10.'):
+            response = requests.get('https://api.ipify.org?format=json')
+            if response.status_code == 200:
+                ip = response.json()['ip']
+        
+        return ip
+    except Exception as e:
+        print(f"Error fetching IP: {e}")
+        return None
+
 # Route for the main page
 @app.route('/')
 def index():
@@ -54,9 +74,8 @@ def submit_form():
     email = request.form.get('email')
 
     # Get user's IP address
-    response = requests.get('https://api.ipify.org?format=json')
-    user_ip = response.json()['ip']  # Use default IP for testing if needed
-    print(user_ip)
+    user_ip = get_client_ip()
+    print(f"User IP: {user_ip}")
     # Fetch user's location based on IP address
     location_data = get_location(user_ip)
 
@@ -90,14 +109,13 @@ def subscribe_newsletter():
         return jsonify({'message': 'This email is already subscribed!'})
 
     # If no existing subscription, proceed with saving the new subscription
-    response = requests.get('https://api.ipify.org?format=json')
-    user_ip = response.json()['ip'] # Use default IP for testing if needed
+    user_ip = get_client_ip()
     user_agent = request.user_agent.string  # Get user agent from the request
     timestamp = datetime.now().isoformat()  # Get the current timestamp
     referrer = request.referrer  # Get referrer URL, if available
 
     # Fetch user's location based on IP address
-    print(user_ip)
+    print(f"User IP: {user_ip}")
     location_data = get_location(user_ip)
 
     # Create a dictionary with the newsletter subscription data
