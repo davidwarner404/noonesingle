@@ -183,17 +183,18 @@ nav ul li a:hover::after {
     margin: 0 auto 40px;
     line-height: 1.8;
 }
+
 .form-container{
     width: 100%;
     height: 100vh;
-   
+
     background: url('https://img.freepik.com/premium-photo/three-women-bathing-suits-stand-garden_946021-242981.jpg?w=740');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     /* background-repeat:space; */
-    
+
 }
 
 .form-section {
@@ -213,7 +214,7 @@ nav ul li a:hover::after {
 .step-indicator {
     display: flex;
     justify-content: space-around;
-    
+
     margin-bottom: 30px;
 }
 
@@ -244,7 +245,7 @@ nav ul li a:hover::after {
 
 /* General Button Styling */
 .next-btn, .submit-btn {
-    
+
     height: 60px;
     width: 60px;
     background-color: #4CAF50;
@@ -794,6 +795,7 @@ footer a:hover {
         font-size: 25px;
         height: 20%;
     }
+
     .midbottom {
         font-size: 25px;
     }
@@ -837,7 +839,8 @@ footer a:hover {
 
 
 
-    .text-center-suggestion_1 h2, .text-center-suggestion_2 h2 {
+    .text-center-suggestion_1 h2,
+    .text-center-suggestion_2 h2 {
 
         font-size: 10vw;
 
@@ -1008,7 +1011,8 @@ button {
 }
 
 /* Centered text suggestion styling */
-.text-center-suggestion_1, .text-center-suggestion_2 {
+.text-center-suggestion_1,
+.text-center-suggestion_2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1021,17 +1025,20 @@ button {
     /* Make sure it's above other content */
 }
 
- /* Blinking Animation with Color Changes */
- @keyframes blinkColors {
+/* Blinking Animation with Color Changes */
+@keyframes blinkColors {
     0% {
         color: red;
     }
+
     33% {
         color: yellow;
     }
+
     66% {
         color: blue;
     }
+
     100% {
         color: red;
     }
@@ -1043,21 +1050,21 @@ a.blinking-link {
     font-weight: bold;
     font-size: 18px;
     animation: blinkColors 1.5s infinite;
-    
-    font-size:  50px;
-     /* Animation duration is 1.5s, repeats infinitely */
+
+    font-size: 50px;
+    /* Animation duration is 1.5s, repeats infinitely */
 }
 
 /* Optional: Add hover effect */
 a.blinking-link:hover {
-    text-decoration:wavy;
+    text-decoration: wavy;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     a.blinking-link {
-  
-        
-        font-size:  25px;
-         /* Animation duration is 1.5s, repeats infinitely */
+
+
+        font-size: 25px;
+        /* Animation duration is 1.5s, repeats infinitely */
     }
 }

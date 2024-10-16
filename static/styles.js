@@ -250,8 +250,8 @@ window.onload = function () {
     function updateSliderPosition() {
         gsap.to(sliderContainer, {
             x: -currentIndex * 100 + '%',
-            duration: 0.5,
-            ease: "power2.out"
+            duration: 0.2, // Reduced from 0.5 to 0.3 for faster animation
+            ease: "power3.out" // Changed from "power2.out" for a smoother effect
         });
     }
 
