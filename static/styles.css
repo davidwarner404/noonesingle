@@ -184,7 +184,34 @@ nav ul li a:hover::after {
     line-height: 1.8;
 }
 
-.form-container{
+.next-top {
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.banner{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+   
+   
+    
+    align-self: center;
+}
+
+
+.banner img{
+    width: 100%;
+    height: 110%;
+   
+}
+
+.next-top h1 {
+    text-align: center;
+
+}
+
+.form-container {
     width: 100%;
     height: 100vh;
 
@@ -244,7 +271,8 @@ nav ul li a:hover::after {
 }
 
 /* General Button Styling */
-.next-btn, .submit-btn {
+.next-btn,
+.submit-btn {
 
     height: 60px;
     width: 60px;
@@ -505,72 +533,86 @@ footer a:hover {
 
 /* Slider styling */
 .offerpromo {
+    padding: 10px;
     display: flex;
     flex-direction: row;
     height: 100vh;
+    gap: 10px;
 
 
 }
 
 .first {
     width: 20%;
-    height: 100%;
+    height: 90vh;
     position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    align-self: center;
 }
 
 .first img {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+   width: 100%;
+   
 
 }
 
 .view {
     position: absolute;
     top: 90%;
-    left: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-decoration: none;
+    background-color: #2C3E50;
+    color: white;
+    padding: 7px;
+    text-wrap: nowrap;
+    border: 2px solid #ccc;
 
 
 }
 
 .view a {
+    
     text-decoration: none;
-    background-color: #2C3E50;
     color: white;
-    padding: 10%;
-    text-wrap: nowrap;
-    border: 2px solid #ccc;
-
 }
 
 
 
 .last {
     width: 20%;
-    height: 100%;
+    height: 90vh;
     position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    align-self: center;
 }
 
 .last img {
-    object-position: bottom;
+    
     height: 100%;
     width: 100%;
-    object-fit: cover;
+   
 }
 
 .last .view {
-    position: absolute;
     top: 90%;
-
-}
-
-.last .view .a {
+    left: 50%;
+    transform: translate(-50%, -50%); 
     text-decoration: none;
     background-color: #2C3E50;
     color: white;
-    padding: 10%;
+    padding: 7px;
     text-wrap: nowrap;
     border: 2px solid #ccc;
+
+}
+
+.last .view a {
+    text-decoration: none;
+    color: white;
 }
 
 .slider {
@@ -659,6 +701,7 @@ footer a:hover {
     padding: 10px 20px;
     font-size: 24px;
     border-radius: 50px;
+    border: 1px solid white;
     /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     /* Shadow for depth */
@@ -668,11 +711,13 @@ footer a:hover {
 
 .prev {
     left: 10px;
+    animation: sizeBlink 1.5s infinite;
     /* Position to the left */
 }
 
 .next {
     right: 10px;
+    animation: sizeBlink 1.5s infinite;
     /* Position to the right */
 }
 
@@ -690,6 +735,20 @@ footer a:hover {
 .next:active {
     transform: scale(0.9);
     /* Slightly shrink when pressed */
+}
+
+@keyframes sizeBlink {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Normal size */
+    }
+
+    50% {
+        transform: scale(1.2);
+        /* Larger size at midpoint */
+    }
 }
 
 
@@ -747,17 +806,17 @@ footer a:hover {
 
     .first {
         width: 100%;
-        height: 5%;
+        height: 100vh;
         position: relative;
         overflow: hidden;
 
     }
 
     .first img {
-        object-fit: cover;
-        object-position: center;
-        margin: auto;
+        
+       
         width: 100%;
+        height: 100%;
 
 
     }
@@ -765,7 +824,8 @@ footer a:hover {
     .first .view {
         position: absolute;
         top: 80%;
-        left: calc(35%);
+        left: 50%;   /* Moves the element 50% right from the left of the containing element */
+        transform: translate(-50%, -50%);
 
     }
 
@@ -802,16 +862,14 @@ footer a:hover {
 
     .last {
         width: 100%;
-        height: 5%;
+        height: 100vh;
         position: relative;
 
     }
 
     .last img {
-        object-fit: cover;
-        object-position: center;
-        margin: auto;
-        width: 100%;
+        width: 50%;
+        height: 100%;
 
 
     }
@@ -819,7 +877,8 @@ footer a:hover {
     .last .view {
         position: absolute;
         top: 80%;
-        left: 35%;
+        left: 50%;   /* Moves the element 50% right from the left of the containing element */
+        transform: translate(-50%, -50%);
 
     }
 
@@ -1010,61 +1069,49 @@ button {
     }
 }
 
-/* Centered text suggestion styling */
-.text-center-suggestion_1,
-.text-center-suggestion_2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+
+
+
+
+
+a.blinking-link {
+
+    padding: 10px 20px;
+    font-size: 19px;
+    background-color: black;
+    /* Button background */
     color: white;
-    font-size: 1.5vw;
-    font-weight: bold;
-    z-index: 2;
-    /* Make sure it's above other content */
+    text-decoration: none;
+    border: 4px solid;
+    /* Border thickness */
+    border-radius: 20px;
+    /* Rounded corners */
+    border-image: linear-gradient(360deg, red, green, blue, red) 1;
+    /* RGB gradient border */
+    animation: borderAnimation 2s linear infinite;
+    /* Infinite animation */
+    cursor: pointer;
+
 }
 
-/* Blinking Animation with Color Changes */
-@keyframes blinkColors {
+@keyframes borderAnimation {
     0% {
-        color: red;
+        border-image: linear-gradient(90deg, red, green, blue, red) 1;
     }
 
-    33% {
-        color: yellow;
+    25% {
+        border-image: linear-gradient(90deg, red, red, green, blue) 1;
     }
 
-    66% {
-        color: blue;
+    50% {
+        border-image: linear-gradient(90deg, blue, red, red, green) 1;
+    }
+
+    75% {
+        border-image: linear-gradient(90deg, green, blue, red, red) 1;
     }
 
     100% {
-        color: red;
-    }
-}
-
-/* Styling the Link */
-a.blinking-link {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    animation: blinkColors 1.5s infinite;
-
-    font-size: 50px;
-    /* Animation duration is 1.5s, repeats infinitely */
-}
-
-/* Optional: Add hover effect */
-a.blinking-link:hover {
-    text-decoration: wavy;
-}
-
-@media (max-width: 768px) {
-    a.blinking-link {
-
-
-        font-size: 25px;
-        /* Animation duration is 1.5s, repeats infinitely */
+        border-image: linear-gradient(90deg, red, green, blue, red) 1;
     }
 }

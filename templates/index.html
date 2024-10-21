@@ -18,7 +18,7 @@
 <body>
     <header>
         <h1 style="display: flex; flex-direction: row; align-items: center;"><img src="static/assets/connection.png" alt=""
-                style="height:50px; width:70px; margin-left: 10px;"> No One Single</h1>
+                style="height:50px; width:70px; margin-left: 10px;"></h1>
         <div class="hamburger" onclick="toggleNav()">
             <div></div>
             <div></div>
@@ -42,9 +42,18 @@
         <div>
             <h2>Connecting People, Building Community</h2>
             <p>Join the best platform to meet new friends and grow your network.</p>
-            <a href="#">Join Us</a>
+            <a href="#form">Join Us</a>
         </div>
     </section>
+    <div class="next-top">
+        <h1 >Explore exciting dating offers at your location, <span id="my-span"></span></h1>
+
+        <div class="banner">
+            <img src="static/assets/vigoilhorizontal4.gif" alt="">
+        </div>
+        
+
+    </div>
 
 
     <div id="cookieConsentBanner">
@@ -87,9 +96,9 @@
     <div class="offerpromo">
         <div class="first" style="overflow: hidden;">
 
-            <img src="static/assets/image_2024_10_04T07_32_18_436Z.png" alt="">
+            <img src="static/assets/316.png" alt="">
             <div class="text-center-suggestion_1">
-                <h2>Explore New Horizons</h2>
+                <!-- <h2>Explore New Horizons</h2> -->
             </div>
             <div class="view">
                 <a href="">Learn More</a>
@@ -110,8 +119,8 @@
                         </video>
                     </a>
                     <div class="midbottom">
-                        <div style="text-align: center;">
-                            <a href="#" class="blinking-link">>>>> Click Here <<<<</a>
+                        <div style="text-align: center;" >
+                            <a href="#" class="blinking-link">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -127,8 +136,8 @@
                         </video>
                     </a>
                     <div class="midbottom">
-                        <div>
-                            <a href="#" class="blinking-link">>>> Click Here <<<<</a>
+                        <div style="text-align: center;" >
+                            <a href="#" class="blinking-link">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -143,8 +152,8 @@
                         </video>
                     </a>
                     <div class="midbottom">
-                        <div>
-                            <a href="#" class="blinking-link">>>>> Click Here <<<<</a>
+                        <div style="text-align: center;" >
+                            <a href="#" class="blinking-link">Click Here</a>
                         </div>
                     </div>
 
@@ -158,11 +167,11 @@
                             <source src="static/assets/screen-capture (3).webm" type="video/mp4">
                         </video></a>
 
-                    <div class="midbottom">
-                        <div>
-                            <a href="#" class="blinking-link">>>> Click Here <<<<</a>
+                        <div class="midbottom">
+                            <div style="text-align: center;" >
+                                <a href="#" class="blinking-link">Click Here</a>
+                            </div>
                         </div>
-                    </div>
                 </div>
 
             </div>
@@ -171,9 +180,9 @@
 
         </div>
         <div class="last" style="overflow: hidden;">
-            <img src="static/assets/image_2024_10_04T07_32_26_688Z.png" alt="">
+            <img src="static/assets/10427.png" alt="">
             <div class="text-center-suggestion_2">
-                <h2>Stay Connected with Us</h2>
+                <!-- <h2>Stay Connected with Us</h2> -->
             </div>
             <div class="view">
                 <a href="">Learn More</a>
@@ -260,13 +269,13 @@
     <div id="newsletterPopup" class="popup" style="display:none;">
         <div class="popup-content">
             <img src="static/assets/connection.png" alt="">
-            <button id="closePopup" class="close-btn">×</button>
+            <!-- <button  class="close-btn">×</button> -->
             <h2>Subscribe to Our Newsletter</h2>
             <p>Get the latest dating updates and community news!</p>
             <form id="newsletterForm" action="/subscribe-newsletter" method="POST">
                 <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
+                <button type="submit">Subscribe</button><br>
+                <a id="closePopup" href="#" style="font-size: 11px; text-decoration: underline;">I will do it later</a>
         </div>
     </div>
 
@@ -275,6 +284,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="static/styles.js"></script>
+    <script>
+        // Get the user's IP address using a third-party API
+        fetch("https://api.ipify.org/?format=json")
+          .then(response => response.json())
+          .then(data => {
+            var ipAddress = data.ip;
+        
+            // Call an IP geolocation API to get the city name from the IP address
+            var geolocationApiUrl = "https://ipapi.co/" + ipAddress + "/json/";
+            fetch(geolocationApiUrl)
+              .then(response => response.json())
+              .then(data => {
+                // Get the city name from the geolocation result and set it as the span text
+                var cityName = data.city || "Unknown";
+                document.getElementById("my-span").textContent = cityName;
+              })
+              .catch(error => console.log(error));
+          })
+          .catch(error => console.log(error));
+        
+        
+        </script>
+        
+        
+        
+        
 
 
 
